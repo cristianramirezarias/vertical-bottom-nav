@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewThumbnail"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewThumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="Miniatura de Video" />
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/textContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cardViewThumbnail"
+        app:layout_constraintTop_toTopOf="@+id/cardViewThumbnail"
+        app:layout_constraintBottom_toBottomOf="@+id/cardViewThumbnail"
+        app:layout_constraintEnd_toStartOf="@+id/durationVideo">
+
+        <TextView
+            android:id="@+id/textViewVideoTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnSurface" android:singleLine="true"
+            android:ellipsize="end"
+            tools:text="Título del Video Musical Oficial" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/durationVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardViewThumbnail"
+        app:layout_constraintBottom_toBottomOf="@+id/cardViewThumbnail"
+        tools:text="3:45" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

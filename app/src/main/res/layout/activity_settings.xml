@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurfaceContainer"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="24dp"
+        tools:context=".SettingsActivity">
+
+        <FrameLayout
+            android:id="@+id/iconTitleContainer"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/circulo_negro_fondo2"
+            app:layout_constraintEnd_toStartOf="@+id/tv_title"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iconTitle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_palette"
+                app:tint="@android:color/white" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/personalization_settings"
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iconTitleContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iconTitleContainer"
+            app:layout_constraintTop_toTopOf="@+id/iconTitleContainer" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="?attr/colorDialogBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_mode_selector_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/seleccionar_modo"
+                    android:textColor="?attr/colorOnBackground"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:id="@+id/mode_solid_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/icon_color_button_text"
+                        android:textColor="?attr/colorOnBackground"
+                        android:textSize="14sp" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switch_solid_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:thumbTint="@color/switch_color_state"
+                        app:trackTint="@color/switch_color_state"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mode_gradient_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/gradient_background_button_text"
+                        android:textColor="?attr/colorOnBackground"
+                        android:textSize="14sp" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switch_gradient_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/switch_color_state"
+                        app:trackTint="@color/switch_color_state"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="8dp"
+                    android:background="?android:attr/listDivider"
+                    android:alpha="0.2" />
+
+                <LinearLayout
+                    android:id="@+id/mode_animations_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/visual_animations"
+                        android:textColor="?attr/colorOnBackground"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switch_animations"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:thumbTint="@color/switch_color_state"
+                        app:trackTint="@color/switch_color_state" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardIcon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="?attr/colorDialogBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardMode">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_icon_selector_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/seleccionar_icono"
+                    android:textColor="?attr/colorOnBackground"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:id="@+id/icon_selector_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_icon_selector"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:orientation="horizontal" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardColor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="?attr/colorDialogBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardIcon">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_color_primer_plano"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/selecciona_color"
+                    android:textColor="?attr/colorOnBackground"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"/>
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:id="@+id/colorSelectorForeground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:columnCount="7"
+                    app:alignmentMode="alignBounds">
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#4682B4">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#4682B4" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#F44336">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#F44336" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#2196F3">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#2196F3" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#4CAF50">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#4CAF50" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#9C27B0">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#9C27B0" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#FF9800">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#FF9800" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#607D8B">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#607D8B" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#E91E63">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#E91E63" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#00BCD4">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#00BCD4" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#3F51B5">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#3F51B5" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#C34B92">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#C34B92" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#009688">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#009688" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#9E9E9E">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#9E9E9E" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#FF5722">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#FF5722" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#FF0000">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#FF0000" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#FF00FF">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#FF00FF" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#0000FF">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#0000FF" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#00FF00">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#00FF00" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/black" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#FFFF00">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#FFFF00" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/black" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#FFD700">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#FFD700" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/black" />
+                    </FrameLayout>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="64dp" app:layout_columnWeight="1" android:tag="#955AE0">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:background="@drawable/circle_background" android:backgroundTint="#955AE0" />
+                        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:padding="12dp" android:src="@drawable/ic_check" android:visibility="invisible" app:tint="@color/black" />
+                    </FrameLayout>
+
+                </androidx.gridlayout.widget.GridLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btn_save_color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="?attr/colorOnSurface"
+            android:padding="12dp"
+            android:text="@string/save_color"
+            android:textColor="?attr/colorSurface"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardColor" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

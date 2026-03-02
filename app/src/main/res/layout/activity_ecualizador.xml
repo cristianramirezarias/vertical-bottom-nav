@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurfaceContainer"
+    tools:context=".EcualizadorActivity">
+
+    <FrameLayout
+        android:id="@+id/iconTitleContainer"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/circulo_negro_fondo2"
+        app:layout_constraintBottom_toTopOf="@id/horizontalScrollViewPresets"
+        app:layout_constraintEnd_toStartOf="@+id/textViewTituloEcualizador"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_ecualizador"
+            app:tint="@android:color/white" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textViewTituloEcualizador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/equalizer_title"
+        android:textColor="?attr/colorOnBackground"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iconTitleContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iconTitleContainer"
+        app:layout_constraintTop_toTopOf="@+id/iconTitleContainer" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollViewPresets"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:scrollbars="none"
+        android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@id/cardEqualizer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iconTitleContainer">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupPresets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleLine="true"
+            app:singleSelection="true"
+            app:selectionRequired="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipPop"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/preset_pop" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipRock"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/preset_rock" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipJazz"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/preset_jazz" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipClassical"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/preset_classical" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipReggaeton"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/preset_reggaeton" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipElectronic"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/preset_electronic" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipHipHop"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/preset_hiphop" />
+
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardEqualizer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="?attr/colorDialogBackground"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toTopOf="@id/btnReiniciarEcualizador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontalScrollViewPresets">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="60Hz"
+                android:textColor="?attr/colorOnBackground" />
+
+            <SeekBar android:id="@+id/seekBarBanda1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:progress="50"
+                android:splitTrack="false"
+                android:layoutDirection="locale"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="250Hz"
+                android:textColor="?attr/colorOnBackground" />
+
+            <SeekBar android:id="@+id/seekBarBanda2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:progress="50"
+                android:splitTrack="false"
+                android:layoutDirection="locale"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="1000Hz"
+                android:textColor="?attr/colorOnBackground" />
+
+            <SeekBar android:id="@+id/seekBarBanda3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:progress="50"
+                android:splitTrack="false"
+                android:layoutDirection="locale"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="4000Hz"
+                android:textColor="?attr/colorOnBackground" />
+
+            <SeekBar android:id="@+id/seekBarBanda4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="100" android:progress="50"
+                android:splitTrack="false"
+                android:layoutDirection="locale"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="16000Hz"
+                android:textColor="?attr/colorOnBackground" />
+
+            <SeekBar android:id="@+id/seekBarBanda5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="100" android:progress="50"
+                android:splitTrack="false"
+                android:layoutDirection="locale"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnReiniciarEcualizador"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="?attr/colorOnBackground"
+        android:padding="12dp"
+        android:text="@string/preset_normal"
+        android:textColor="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardEqualizer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

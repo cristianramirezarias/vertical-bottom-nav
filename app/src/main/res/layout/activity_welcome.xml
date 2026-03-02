@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="?attr/colorBackground"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".WelcomeActivity">
+
+    <TextView
+        android:id="@+id/welcomeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_title"
+        android:textColor="?attr/colorOnBackground"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp" />
+
+    <TextView
+        android:id="@+id/appDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcomeTitle"
+        android:layout_marginTop="14dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/app_description"
+        android:textColor="?attr/colorOnBackground"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/privacyInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="?attr/colorWelcomeDialog"
+        android:padding="16dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/acceptance_title"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center" />
+
+        <CheckBox
+            android:id="@+id/termsCheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/accept_terms_checkbox"
+            android:textColor="?attr/colorOnSurface"
+            android:buttonTint="#FF4081"
+            android:checked="false" />
+
+        <TextView
+            android:id="@+id/privacyLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/privacy_link"
+            android:textColor="#FF4081"
+            android:textSize="14sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground" />
+
+        <TextView
+            android:id="@+id/termsLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/terms_link"
+            android:textColor="#FF4081"
+            android:textSize="14sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground" />
+
+        <Button
+            android:id="@+id/acceptButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/continue_button"
+            android:backgroundTint="#FF4081"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/declineAndExitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/decline_and_exit_button"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:textColor="?attr/colorOnSurface" />
+
+    </LinearLayout>
+</RelativeLayout>

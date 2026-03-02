@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="?attr/colorDialogBackground">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/volumen_title"
+        android:textSize="18sp"
+        android:layout_marginBottom="12dp"
+        android:textColor="?android:attr/textColorPrimary"/>
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/volume_warning"
+        android:textAlignment="center"
+        android:textColor="?android:attr/textColorSecondary"
+        android:layout_marginBottom="24dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_volume_down"
+            android:contentDescription="Volumen bajo"
+            app:tint="?attr/colorOnSurface" />
+
+        <SeekBar
+            android:id="@+id/seekBarVolume"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:max="15"
+            android:thumbTint="?attr/colorOnSurface"
+            android:progressTint="?attr/colorOnSurface"
+            android:progressBackgroundTint="?attr/colorOnSurfaceVariant" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_volume"
+            android:contentDescription="Volumen alto"
+            app:tint="?attr/colorOnSurface" />
+    </LinearLayout>
+
+</LinearLayout>

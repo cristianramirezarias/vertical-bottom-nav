@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".AdsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="?attr/colorWelcomeDialog"
+        android:padding="16dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/privacy_ads_title"
+            android:textColor="#FF4081"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/privacy_ads_description"
+            android:textColor="#C0C0C0"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/privacyLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/privacy_link"
+            android:textColor="#FF4081"
+            android:textSize="14sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground" />
+
+        <TextView
+            android:id="@+id/termsLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/terms_link"
+            android:textColor="#FF4081"
+            android:textSize="14sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground" />
+
+        <Button
+            android:id="@+id/acceptButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/accept_personalized_ads"
+            android:backgroundTint="#FF4081"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/rejectButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/reject_personalized_ads"
+            android:backgroundTint="#8A8A8A"
+            android:textColor="#ffffff"
+            android:stateListAnimator="@null"
+            android:elevation="0dp" />
+
+    </LinearLayout>
+</RelativeLayout>
