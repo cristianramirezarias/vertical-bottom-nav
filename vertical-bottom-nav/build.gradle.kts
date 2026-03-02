@@ -1,9 +1,12 @@
+import com.android.build.api.dsl.LibraryExtension
+
 plugins {
     alias(libs.plugins.android.library)
     id("maven-publish")
+    id("org.jetbrains.kotlin.android")
 }
 
-configure<com.android.build.api.dsl.LibraryExtension> {
+extensions.configure<LibraryExtension>("android") {
     namespace = "com.krystalshardbrCristianR.vertical_bottom_nav"
     compileSdk = 36
 
@@ -30,8 +33,12 @@ configure<com.android.build.api.dsl.LibraryExtension> {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlin {
+        jvmToolchain(17)
     }
 }
 
@@ -47,9 +54,9 @@ afterEvaluate {
         publications {
             create<MavenPublication>("release") {
                 from(components["release"])
-                groupId = "com.github.Cristian"
+                groupId = "com.github.cristianramirezarias"
                 artifactId = "vertical-bottom-nav"
-                version = "1.0.0"
+                version = "1.0.1"
             }
         }
     }
